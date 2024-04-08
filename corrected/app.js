@@ -23,6 +23,7 @@ connection.connect((err) => {
 
 // middleware
 app.use(express.json());
+app.use(cors());
 
 app.get("/creat", (req, res) => {
 	const taskTable = `  CREATE TABLE Task (
