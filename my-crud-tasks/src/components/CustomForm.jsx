@@ -101,49 +101,49 @@ export default function CustomForm() {
 				{isLoading ? (
 					<p className=" loading"></p>
 				) : (
-					<div className="tasks">
-						{tasks.map((eachTask, i) => {
-							let displayTasks = (
-								<div className key={i}>
-									<div
-										className={`single-task ${
-											eachTask.completed && "task-completed"
-										}`}
-									>
-										<h5>
-											<span>
-												<i className="far fa-check-circle"></i>
-											</span>
-											{eachTask.task_name}
-										</h5>
+					// <div className="tasks">
+					// 	{tasks.map((eachTask, i) => {
+					// 		let displayTasks = (
+					// 			<div className key={i}>
+					// 				<div
+					// 					className={`single-task ${
+					// 						eachTask.completed && "task-completed"
+					// 					}`}
+					// 				>
+					// 					<h5>
+					// 						<span>
+					// 							<i className="far fa-check-circle"></i>
+					// 						</span>
+					// 						{eachTask.task_name}
+					// 					</h5>
 
-										<div className="task-links">
-											{/* <!-- edit link --> */}
-											<Link
-												to={`/TodoList/${eachTask.id}`}
-												className="edit-link"
-											>
-												<i className="fas fa-edit"></i>
-											</Link>
+					// 					<div className="task-links">
+					// 						{/* <!-- edit link --> */}
+					// 						<Link
+					// 							to={`/TodoList/${eachTask.id}`}
+					// 							className="edit-link"
+					// 						>
+					// 							<i className="fas fa-edit"></i>
+					// 						</Link>
 
-											<button
-												onClick={() => {
-													handleDelete(eachTask.id);
-												}}
-												type="button"
-												className="delete-btn"
-											>
-												<i className="fas fa-trash"></i>
-											</button>
-										</div>
-									</div>
-								</div>
-							);
+					// 						<button
+					// 							onClick={() => {
+					// 								handleDelete(eachTask.id);
+					// 							}}
+					// 							type="button"
+					// 							className="delete-btn"
+					// 						>
+					// 							<i className="fas fa-trash"></i>
+					// 						</button>
+					// 					</div>
+					// 				</div>
+					// 			</div>
+					// 		);
 
-							return displayTasks;
-						})}
-					</div>
-				)}
+					// 		return displayTasks;
+					// 	})}
+					// </div>
+				"")}
 			</section>
 		</>
 	);
