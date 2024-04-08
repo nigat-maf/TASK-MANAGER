@@ -19,7 +19,7 @@ export default function CustomForm() {
 				validation("name is required", false);
 				return;
 			}
-			await axios.post("http://localhost:3000/task/create", {
+			await axios.post("https://task-manager-wb9g.onrender.com/task/create", {
 				task_name: addedTask,
 			});
 			setaddedTask("");
@@ -32,7 +32,9 @@ export default function CustomForm() {
 	async function fetchData() {
 		try {
 			// setisLoading(true);
-			const { data } = await axios("http://localhost:3000/task");
+			const { data } = await axios(
+				"https://task-manager-wb9g.onrender.com/task"
+			);
 			console.log(data);
 			setTasks(data);
 
@@ -50,7 +52,9 @@ export default function CustomForm() {
 	}
 	async function handleDelete(id) {
 		try {
-			const responde = await axios.delete("http://localhost:3000/task/" + id);
+			const responde = await axios.delete(
+				"https://task-manager-wb9g.onrender.com/task/" + id
+			);
 			console.log(responde.data);
 			fetchData();
 			validation("task is deleted successfully", true);

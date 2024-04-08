@@ -4,7 +4,7 @@ import axios from "axios";
 
 export default function TodoList() {
 	const { id } = useParams();
-	const[todos, setTodos] = useState("")
+	const [todos, setTodos] = useState("");
 
 	const [notification, setnotification] = useState({
 		message: "",
@@ -23,11 +23,12 @@ export default function TodoList() {
 
 	async function fetchSingleData() {
 		try {
-			const { data } = await axios.get("http://localhost:3000/task/" + id);
+			const { data } = await axios.get(
+				"https://task-manager-wb9g.onrender.com/task/" + id
+			);
 			console.log(data);
 			if (!Array.isArray(data)) {
 				validation("No task selected", false);
-				
 			}
 			pDOM.current.textContent = data[0].id;
 			inputDOM.current.value = data[0].task_name;
@@ -40,7 +41,7 @@ export default function TodoList() {
 
 	async function updater() {
 		try {
-			await axios.patch("http://localhost:3000/task/" + id, {
+			await axios.patch("https://task-manager-wb9g.onrender.com/task/" + id, {
 				task_name: inputDOM.current.value,
 				completed: checkDOM.current.checked,
 			});
@@ -49,7 +50,6 @@ export default function TodoList() {
 		} catch (error) {
 			console.error(error);
 			validation("something went wrong", false);
-
 		}
 	}
 	useEffect(() => {
