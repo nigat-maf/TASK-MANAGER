@@ -102,7 +102,7 @@ export default function CustomForm() {
 					<p className=" loading"></p>
 				) : (
 					<div className="tasks">
-						{tasks?.map((eachTask, i) => {
+						{tasks.map((eachTask, i) => {
 							let displayTasks = (
 								<div className key={i}>
 									<div
