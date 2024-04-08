@@ -63,9 +63,9 @@ export default function CustomForm() {
 		}
 	}
 
-	useEffect(() => {
-		fetchData();
-	}, []);
+	// useEffect(() => {
+	// 	fetchData();
+	// }, []);
 
 	console.log(tasks);
 	return (
